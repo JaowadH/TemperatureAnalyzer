@@ -22,11 +22,23 @@ public class TemperatureAnalyzer {
                 scanner.next(); // Clear the invalid input
             }
         }
-        double[] temperatures = new double[numDays]; // Add this line
-        double sumOfTemperatures = 0; // Initialize sum variable here
+        double[] temperatures = new double[numDays];
+        double sumOfTemperatures = 0;
 
-        System.out.println("Number of days entered: " + numDays);
-        System.out.println("Temperatures array initialized with size: " + temperatures.length); // Temporary output
+        // 2. Prompt the user to enter all the numbers (temperature values)
+        System.out.println("Enter the temperature for each day:");
+        for (int i = 0; i < numDays; i++) {
+            while (true) {
+                try {
+                    System.out.print("Temperature for day " + (i + 1) + ": ");
+                    temperatures[i] = scanner.nextDouble();
+                    sumOfTemperatures += temperatures[i]; // Add to sum here
+                    break; // Exit inner loop if input is valid
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid input. Please enter a numeric temperature value.");
+                    scanner.next(); // Clear the invalid input
+                }
+            }
+        }
 
-    }
-}
+        System.out.println("All temperatures entered. Total sum: " + sumOfTemperatures); // Temporary output
