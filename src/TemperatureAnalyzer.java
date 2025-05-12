@@ -46,5 +46,18 @@ public class TemperatureAnalyzer {
         if (numDays > 0) { // Avoid division by zero if numDays is somehow 0
             averageTemperature = sumOfTemperatures / numDays;
         }
+        // ... previous code including average calculation and display ...
+
+       // 4. Given the average temperature, how many of the numbers are above the average temperature?
+        int daysAboveAverage = 0;
+        for (int i = 0; i < numDays; i++) {
+            if (temperatures[i] > averageTemperature) {
+                daysAboveAverage++;
+            }
+        }
+
 
         System.out.printf("Average temperature: %.2f\n", averageTemperature); // Display average
+        System.out.println("Number of days with temperature above average: " + daysAboveAverage); // Display the count
+
+        scanner.close();
