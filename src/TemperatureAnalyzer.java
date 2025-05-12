@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 public class TemperatureAnalyzer {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // Initialize scanner
+        Scanner scanner = new Scanner(System.in);
         int numDays = 0;
 
         // 1. Take an input from the user (eg. 5 for the number of days)
@@ -32,7 +32,7 @@ public class TemperatureAnalyzer {
                 try {
                     System.out.print("Temperature for day " + (i + 1) + ": ");
                     temperatures[i] = scanner.nextDouble();
-                    sumOfTemperatures += temperatures[i]; // Add to sum here
+                    sumOfTemperatures += temperatures[i];
                     break; // Exit inner loop if input is valid
                 } catch (InputMismatchException e) {
                     System.out.println("Invalid input. Please enter a numeric temperature value.");
@@ -43,12 +43,13 @@ public class TemperatureAnalyzer {
 
         // 3. Calculate the average temperature
         double averageTemperature = 0;
-        if (numDays > 0) { // Avoid division by zero if numDays is somehow 0
+        if (numDays > 0) {
             averageTemperature = sumOfTemperatures / numDays;
         }
-        // ... previous code including average calculation and display ...
 
-       // 4. Given the average temperature, how many of the numbers are above the average temperature?
+        System.out.printf("Average temperature: %.2f\n", averageTemperature);
+
+        // 4. Given the average temperature, how many of the numbers are above the average temperature?
         int daysAboveAverage = 0;
         for (int i = 0; i < numDays; i++) {
             if (temperatures[i] > averageTemperature) {
@@ -56,8 +57,8 @@ public class TemperatureAnalyzer {
             }
         }
 
-
-        System.out.printf("Average temperature: %.2f\n", averageTemperature); // Display average
-        System.out.println("Number of days with temperature above average: " + daysAboveAverage); // Display the count
+        System.out.println("Number of days with temperature above average: " + daysAboveAverage);
 
         scanner.close();
+    }
+}
