@@ -22,9 +22,11 @@ public class TemperatureAnalyzer {
                 scanner.next(); // Clear the invalid input
             }
         }
+        double[] temperatures = new double[numDays]; // Add this line
+        double sumOfTemperatures = 0; // Initialize sum variable here
 
-        System.out.println("Number of days entered: " + numDays); // Temporary output
+        System.out.println("Number of days entered: " + numDays);
+        System.out.println("Temperatures array initialized with size: " + temperatures.length); // Temporary output
 
-        // Scanner closing will be added later
     }
 }
