@@ -41,4 +41,10 @@ public class TemperatureAnalyzer {
             }
         }
 
-        System.out.println("All temperatures entered. Total sum: " + sumOfTemperatures); // Temporary output
+        // 3. Calculate the average temperature
+        double averageTemperature = 0;
+        if (numDays > 0) { // Avoid division by zero if numDays is somehow 0
+            averageTemperature = sumOfTemperatures / numDays;
+        }
+
+        System.out.printf("Average temperature: %.2f\n", averageTemperature); // Display average
